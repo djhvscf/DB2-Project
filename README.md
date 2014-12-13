@@ -1,4 +1,4 @@
 DB2-Project
 ===========
 
-Proyecto de Base de Datos 2 - Oracle 11g
+Database 2 Project - Oracle 11g 
