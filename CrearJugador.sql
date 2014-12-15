@@ -1,19 +1,16 @@
---=====================================================
+﻿--=====================================================
 --	Inicio del bloque PL/SQL, declarando las variables a utilizar
 --=====================================================
 DECLARE
-	IdJugador NUMBER := 0;
+	Apodo VARCHAR2(100) := '';
 BEGIN
 	--=====================================================
-	--	Linea para que el usuario ingrese el Id del jugador
-	--	Opcioones:
-	--	0:	Todos los jugadores
-	--	IdJugador:	Id del jugador específico del que se desea ver la información
+	--	Linea para que el usuario ingrese el nombre del nuevojugador
 	--=====================================================
-	IdJugador := &IdJugador;
+	Apodo := '&Apodo';
 	--=====================================================
 	--	Ejecución del Stored Procedure
 	--=====================================================
-	EstadisticaJugador(IdJugador);
+	CrearJugador(Apodo);
 END;
 /
