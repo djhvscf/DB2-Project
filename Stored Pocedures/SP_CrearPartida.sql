@@ -1,4 +1,4 @@
-CREATE OR REPLACE PROCEDURE CrearPartida (IdJugador1 IN NUMBER, IdJugador2 IN NUMBER, NombrePartida IN VARCHAR2)
+CREATE OR REPLACE PROCEDURE CrearPartida (p_IdJugador1 IN NUMBER, p_IdJugador2 IN NUMBER, p_NombrePartida IN VARCHAR2)
 IS
 	IdPartidaNew NUMBER;
 BEGIN
@@ -23,7 +23,7 @@ BEGIN
 		VALUES
 		(
 			IdPartidaNew,
-			NombrePartida,
+			p_NombrePartida,
 			SYSDATE()
 		);
 	--=====================================================
@@ -37,7 +37,7 @@ BEGIN
 		)
 		VALUES
 		(
-			IdJugador1,
+			p_IdJugador1,
 			IdPartidaNew
 		);
 	INSERT 
@@ -48,9 +48,12 @@ BEGIN
 		)
 		VALUES
 		(
-			IdJugador2,
+			p_IdJugador2,
 			IdPartidaNew
 		);
+	
+	CrearPieza(IdPartidaNew);
+	COMMIT;
 	--=====================================================
 	--	Mensaje de éxito
 	--=====================================================

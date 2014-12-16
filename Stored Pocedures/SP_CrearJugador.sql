@@ -1,8 +1,8 @@
-CREATE OR REPLACE PROCEDURE CrearJugador (Apodo IN VARCHAR2)
+CREATE OR REPLACE PROCEDURE CrearJugador (p_Apodo IN VARCHAR2)
 IS
 BEGIN
 	--=====================================================
-	--	inserción del nuevo jugador
+	--	Inserción del nuevo jugador
 	--=====================================================
 	INSERT 
 		INTO Jugador
@@ -13,12 +13,13 @@ BEGIN
 		VALUES
 		(
 			(SELECT COALESCE(MAX(IdJugador),0) FROM Jugador) + 1,
-			Apodo
+			p_Apodo
 		);
+	COMMIT;
 	--=====================================================
 	--	Mensaje de éxito
 	--=====================================================
-	DBMS_OUTPUT.PUT_LINE('Jugador(a) ' || Apodo || ' cread@');
+	DBMS_OUTPUT.PUT_LINE('Jugador(a) ' || p_Apodo || ' cread@');
 	EXCEPTION
 		WHEN OTHERS THEN
 		DBMS_OUTPUT.PUT_LINE('Ha ocurrido un error!');
