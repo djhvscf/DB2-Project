@@ -11,20 +11,22 @@ BEGIN
 	FROM 
 			Partida;
 	--=====================================================
-	--	Inserción de la nueva partida
+	--	Inserción de la nueva partida (0 -> Blancas | 1 -> Negras)
 	--=====================================================
 	INSERT 
 		INTO Partida
 		(
 			IdPartida,
 			Nombre,
-			FechaCreacion
+			FechaCreacion,
+			Turno
 		)
 		VALUES
 		(
 			IdPartidaNew,
 			p_NombrePartida,
-			SYSDATE()
+			SYSDATE(),
+			0
 		);
 	--=====================================================
 	--	Inserción de los jugadores pertenecientes a esa partida
@@ -33,34 +35,43 @@ BEGIN
 		INTO JugadorPartida
 		(
 			IdJugador,
-			IdPartida
+			IdPartida,
+			Color
 		)
 		VALUES
 		(
 			p_IdJugador1,
-			IdPartidaNew
+			IdPartidaNew,
+			'Blancas'
 		);
 	INSERT 
 		INTO JugadorPartida
 		(
 			IdJugador,
-			IdPartida
+			IdPartida,
+			Color
 		)
 		VALUES
 		(
 			p_IdJugador2,
-			IdPartidaNew
+			IdPartidaNew,
+			'Negras'
 		);
-	
+	--=====================================================
+	--	Ejecución del Stored Procedure
+	--=====================================================
 	CrearPieza(IdPartidaNew);
 	COMMIT;
 	--=====================================================
 	--	Mensaje de éxito
 	--=====================================================
-	DBMS_OUTPUT.PUT_LINE('Partida creada' );
+	DBMS_OUTPUT.PUT_LINE('Partida número: ' || IdPartidaNew || ' creada' );
+	--=====================================================
+	--	Manejo de las excepciones
+	--=====================================================
 	EXCEPTION
 		WHEN OTHERS THEN
-		DBMS_OUTPUT.PUT_LINE('Ha ocurrido un error!');
-		ROLLBACK;
+			DBMS_OUTPUT.PUT_LINE('Ha ocurrido un error!');
+			ROLLBACK;
 END;
 /

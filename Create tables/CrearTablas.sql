@@ -4,8 +4,7 @@
 CREATE TABLE Jugador 
 ( 
 	IdJugador      	NUMBER NOT NULL PRIMARY KEY		,
-	Apodo    		VARCHAR2(100) 					,
-	FechaNacimiento DATE
+	Apodo    		VARCHAR2(100) 					
 );
 
 --=====================================================
@@ -15,7 +14,9 @@ CREATE TABLE Partida
 (
 	IdPartida		NUMBER NOT NULL PRIMARY KEY		,
 	Nombre			VARCHAR2(100)					,
-	FechaCreacion	DATE
+	FechaCreacion	DATE							,
+	Turno			NUMBER NOT NULL					,
+	IsFinalizada	NUMBER						
 );
 
 --=====================================================
@@ -23,8 +24,10 @@ CREATE TABLE Partida
 --=====================================================
 CREATE TABLE JugadorPartida
 (
-	IdJugador		NUMBER NOT NULL					,
-	IdPartida		NUMBEr NOT NULL					,
+	IdJugador			NUMBER NOT NULL					,
+	IdPartida			NUMBER NOT NULL					,
+	Color				VARCHAR(50)						,
+	IdJugadorGanador	NUMBER							,
 	PRIMARY KEY		(IdJugador, IdPartida)
 );
 

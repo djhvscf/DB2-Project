@@ -7,7 +7,7 @@ DECLARE
 	NombrePartida VARCHAR(100);
 BEGIN
 	--=====================================================
-	--	Selección del nombre del jugador número 1
+	--	Selección del Id del jugador número 1
 	--=====================================================
 	SELECT 
 			IdJugador 
@@ -17,7 +17,7 @@ BEGIN
 	WHERE 
 			UPPER(Apodo) = UPPER('&apodo');
 	--=====================================================
-	--	Selección del nombre del jugador número 2
+	--	Selección del Id del jugador número 2
 	--=====================================================
 	SELECT 
 			IdJugador 
@@ -34,5 +34,12 @@ BEGIN
 	--	Ejecución del Stored Procedure
 	--=====================================================
 	CrearPartida(Jugador1, Jugador2, NombrePartida);
+	--=====================================================
+	--	Manejo de las excepciones
+	--=====================================================
+	EXCEPTION
+		WHEN NO_DATA_FOUND THEN
+			DBMS_OUTPUT.PUT_LINE('Uno o ambos jugadoes no están registrados');
+			ROLLBACK;
 END;
 /

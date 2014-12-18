@@ -16,7 +16,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Rey',
 			'1',
@@ -36,7 +36,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Dama',
 			'1',
@@ -56,7 +56,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Torre',
 			'1',
@@ -76,7 +76,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Torre',
 			'1',
@@ -96,7 +96,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Alfil',
 			'1',
@@ -116,7 +116,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Alfil',
 			'1',
@@ -136,7 +136,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Caballo',
 			'1',
@@ -156,7 +156,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Caballo',
 			'1',
@@ -176,7 +176,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Peon',
 			'2',
@@ -196,7 +196,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Peon',
 			'2',
@@ -216,7 +216,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Peon',
 			'2',
@@ -236,7 +236,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Peon',
 			'2',
@@ -256,7 +256,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Peon',
 			'2',
@@ -276,7 +276,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Peon',
 			'2',
@@ -296,7 +296,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Peon',
 			'2',
@@ -316,7 +316,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Peon',
 			'2',
@@ -338,7 +338,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Rey',
 			'8',
@@ -358,7 +358,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Dama',
 			'8',
@@ -378,7 +378,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Torre',
 			'8',
@@ -398,7 +398,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Torre',
 			'8',
@@ -418,7 +418,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Alfil',
 			'8',
@@ -438,7 +438,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Alfil',
 			'8',
@@ -458,7 +458,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Caballo',
 			'8',
@@ -478,7 +478,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Caballo',
 			'8',
@@ -498,7 +498,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Peon',
 			'7',
@@ -518,7 +518,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Peon',
 			'7',
@@ -538,7 +538,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Peon',
 			'7',
@@ -558,7 +558,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Peon',
 			'7',
@@ -578,10 +578,10 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Peon',
-			'8',
+			'7',
 			'e',
 			'N'
 		);
@@ -598,7 +598,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Peon',
 			'7',
@@ -618,7 +618,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Peon',
 			'7',
@@ -638,7 +638,7 @@ BEGIN
 		)
 		VALUES
 		(
-			COALESCE(MAX(IdPieza),0) + 1,
+			(SELECT COALESCE(MAX(IdPieza),0) FROM Pieza) + 1,
 			p_IdPartida,
 			'Peon',
 			'7',
@@ -646,9 +646,12 @@ BEGIN
 			'N'
 		);
 	COMMIT;
+	--=====================================================
+	--	Manejo de las excepciones
+	--=====================================================
 	EXCEPTION
 		WHEN OTHERS THEN
-		DBMS_OUTPUT.PUT_LINE('Ha ocurrido un error!');
-		ROLLBACK;
+			DBMS_OUTPUT.PUT_LINE('Ha ocurrido un error!');
+			ROLLBACK;
 END;
 /

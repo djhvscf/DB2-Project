@@ -7,10 +7,28 @@ DECLARE
 	PosicionOrigenLet 	VARCHAR2(1) := '&PosicionOrigenY';
 	PosicionDestinoNum 	VARCHAR2(1) := '&PosicionDestinoX';
 	PosicionDestinoLet 	VARCHAR2(1) := '&PosicionDestinoY';
+	IsFinalizadaPart	NUMBER;
 BEGIN
 	--=====================================================
-	--	Ejecución del Stored Procedure
+	--	Validación si la partida está finalizada
 	--=====================================================
-	MoverPieza(Partida, PosicionOrigenNum, PosicionOrigenLet, PosicionDestinoNum, PosicionDestinoLet);
+	SELECT
+			IsFinalizada
+	INTO
+			IsFinalizadaPart
+	FROM
+			Partida
+	WHERE
+			IdPartida = Partida;
+			
+	IF IsFinalizadaPart = 1 
+	THEN
+		DBMS_OUTPUT.PUT_LINE('La partida ' || Partida || ' ya está finalizada');
+	ELSE
+		--=====================================================
+		--	Ejecución del Stored Procedure
+		--=====================================================
+		MoverPieza(Partida, PosicionOrigenNum, PosicionOrigenLet, PosicionDestinoNum, PosicionDestinoLet);
+	END IF;
 END;
 /

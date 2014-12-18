@@ -19,7 +19,9 @@ BEGIN
 			PosicionY = p_PosicionY;
 
 	RETURN IdPiezaAct;
-	
+	--=====================================================
+	--	Manejo de las excepciones
+	--=====================================================
 	EXCEPTION
 		WHEN NO_DATA_FOUND THEN
 			IF p_IsExistePieza = 1
@@ -27,6 +29,7 @@ BEGIN
 				RETURN 0;
 			ELSE
 				DBMS_OUTPUT.PUT_LINE('No existe ninguna pieza en la posición: ' || p_PosicionX || p_PosicionY);
+				RETURN -1;
 			END IF;
 END EncontrarIdPieza;
 /

@@ -20,9 +20,12 @@ BEGIN
 	--	Mensaje de éxito
 	--=====================================================
 	DBMS_OUTPUT.PUT_LINE('Jugador(a) ' || p_Apodo || ' cread@');
+	--=====================================================
+	--	Manejo de las excepciones
+	--=====================================================
 	EXCEPTION
 		WHEN OTHERS THEN
-		DBMS_OUTPUT.PUT_LINE('Ha ocurrido un error!');
-		ROLLBACK;
+			DBMS_OUTPUT.PUT_LINE('Ha ocurrido un error!');
+			ROLLBACK;
 END;
 /

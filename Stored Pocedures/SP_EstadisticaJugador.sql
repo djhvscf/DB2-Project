@@ -14,6 +14,7 @@ IS
 	Id				NUMBER;
 	Apodo 			VARCHAR2(100);
 	CantPartidas	NUMBER;
+	CantPartidasGan	NUMBER;
 BEGIN
 	--=====================================================
 	--	Inicio del cursor en un LOOP
@@ -38,7 +39,7 @@ BEGIN
 		WHERE
 				IdJugador = Player.IdJugador;
 		--=====================================================
-		--	Se obtiene la partidas jugadas por el jugador actualmente en el ciclo
+		--	Se obtiene las partidas jugadas por el jugador actualmente en el ciclo
 		--=====================================================	
 		SELECT
 				COUNT(1)
@@ -49,15 +50,30 @@ BEGIN
 		WHERE
 				IdJugador = Player.IdJugador;
 		--=====================================================
+		--	Se obtiene las partidas ganas por el jugador actualmente en el ciclo
+		--=====================================================
+		SELECT
+				COUNT(1)
+		INTO 
+				CantPartidasGan
+		FROM
+				JugadorPartida
+		WHERE
+				IdJugadorGanador = Player.IdJugador;		
+		--=====================================================
 		--	Mensaje con la información del jugador
 		--=====================================================
 		DBMS_OUTPUT.PUT_LINE('Identificador: ' || Id );
 		DBMS_OUTPUT.PUT_LINE('Apodo: ' || Apodo);
 		DBMS_OUTPUT.PUT_LINE('Cantidad de partidas jugadas: ' || CantPartidas);
+		DBMS_OUTPUT.PUT_LINE('Cantidad de partidas ganadas: ' || CantPartidasGan);
 	END LOOP;
+	--=====================================================
+	--	Manejo de las excepciones
+	--=====================================================
 	EXCEPTION
 		WHEN OTHERS THEN
-		DBMS_OUTPUT.PUT_LINE('Ha ocurrido un error!');
-		ROLLBACK;
+			DBMS_OUTPUT.PUT_LINE('Ha ocurrido un error!');
+			ROLLBACK;
 END;
 /

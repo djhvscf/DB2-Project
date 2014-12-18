@@ -58,13 +58,15 @@ INSERT
 	(
 		IdPartida,
 		Nombre,
-		FechaCreacion
+		FechaCreacion,
+		Turno
 	)
 	VALUES
 	(
 		1,
 		'Partida1',
-		SYSDATE
+		SYSDATE,
+		0
 	);
 
 INSERT 
@@ -72,13 +74,15 @@ INSERT
 	(
 		IdPartida,
 		Nombre,
-		FechaCreacion
+		FechaCreacion,
+		Turno
 	)
 	VALUES
 	(
 		2,
 		'Partida2',
-		SYSDATE
+		SYSDATE,
+		0
 	);
 --=====================================================
 --	Inserción de Jugadores en cada partida
@@ -88,24 +92,28 @@ INSERT
 	INTO JugadorPartida
 	(
 		IdJugador,
-		IdPartida
+		IdPartida,
+		Color
 	)
 	VALUES
 	(
 		1,
-		1
+		1,
+		'Blancas'
 	);
 	
 INSERT 
 	INTO JugadorPartida
 	(
 		IdJugador,
-		IdPartida
+		IdPartida,
+		Color
 	)
 	VALUES
 	(
 		2,
-		1
+		1,
+		'Negras'
 	);
 --=====================================================
 --	Inserción de piezas
@@ -691,7 +699,7 @@ INSERT
 		29,
 		1,
 		'Peon',
-		'8',
+		'7',
 		'e',
 		'N'
 	);
